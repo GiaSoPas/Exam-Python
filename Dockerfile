@@ -1,4 +1,4 @@
-FROM python:3.9-alpine AS build-stage
+FROM python:3.9-alpine 
 COPY requirements.txt app.py ./
 RUN pip3 install -r requirements.txt && \
     rm -rf /.cache/* /tmp/* /var/cache/apk/* \
@@ -19,7 +19,7 @@ RUN pip3 install -r requirements.txt && \
 
 
 FROM alpine
-COPY --from=build-stage . .
+COPY --from=0 . .
 
 EXPOSE 8080
 
