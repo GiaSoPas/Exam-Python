@@ -21,7 +21,7 @@ RUN pip3 install -r requirements.txt && \
 FROM alpine
 COPY --from=build-stage . .
 
-EXPOSE 80
+EXPOSE 8080
 
 ENTRYPOINT ["python3"]
 CMD ["app.py"]
