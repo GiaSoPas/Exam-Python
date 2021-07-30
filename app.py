@@ -1,8 +1,9 @@
 """Main application file"""
 import logging
-from flask import Flask, make_response, send_from_directory, jsonify
+from flask import Flask
 
 app = Flask(__name__)
+
 
 @app.route('/')
 def hello_world():
