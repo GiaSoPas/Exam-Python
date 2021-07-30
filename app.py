@@ -9,7 +9,8 @@ app.debug = True
 
 handler = logging.FileHandler('app.log', encoding='UTF-8')
 
-logging_format = logging.Formatter('%(asctime)s - %(levelname)s - %(filename)s /'
+logging_format = logging.Formatter('%(asctime)s - %(levelname)s /'
+                                   '- %(filename)s /'
                                    '- %(funcName)s - %(lineno)s - %(message)s')
 
 handler.setFormatter(logging_format)
