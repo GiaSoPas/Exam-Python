@@ -6,13 +6,14 @@ from flask import Flask, make_response, send_from_directory, jsonify
 app = Flask(__name__)
 
 app.debug = True
- # Output handle
+
 handler = logging.FileHandler('app.log', encoding='UTF-8')
- # Print format
-logging_format = logging.Formatter('%(asctime)s - %(levelname)s - %(filename)s - %(funcName)s - %(lineno)s - %(message)s')
- # Format
+
+logging_format = logging.Formatter('%(asctime)s - %(levelname)s - %(filename)s /'
+                                   '- %(funcName)s - %(lineno)s - %(message)s')
+
 handler.setFormatter(logging_format)
- # Generate object, add handle
+
 app.logger.addHandler(handler)
 
 
